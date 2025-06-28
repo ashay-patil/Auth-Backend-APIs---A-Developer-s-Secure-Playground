@@ -1,7 +1,7 @@
 const User = require('../models/user');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const sendOTP = require('../services.js/otpService');
+const sendOTP = require('../services/otpService');
 const {StatusCodes} = require('http-status-codes');
 const generateOTP = require('../utils/generateOTP');
 
