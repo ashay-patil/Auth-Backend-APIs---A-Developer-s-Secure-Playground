@@ -58,8 +58,8 @@ const resendOTP = async (req, res)=>{
     const newExpiry = new Date(Date.now()+5*60*1000);
     user.otp = newOTP;
     user.otpExpiresAt = newExpiry;
-    await user.save();
     await sendOTP(email, newOTP);
+    await user.save();
     res.status(StatusCodes.OK).json({success : true, msg :`New OTP sent to ${email}`});
 }
 
